@@ -90,7 +90,7 @@ int find_process()
 		flag = Process32First(hSnapShot, &stProcess);
 		do
 		{
-			if (strcmp((const char*)stProcess.szExeFile, (const char*)(L"popcapgame1.exe")) == 0)
+			if (wcscoll(stProcess.szExeFile, (L"popcapgame1.exe")) == 0)
 			{
 				processPid = stProcess.th32ProcessID;
 				printf("检测到进程!\n");
